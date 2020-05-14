@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/trips/styles.css" />
+    </head>
+    <body>
+        <h2>Add Trip</h2>
+        <form method="POST" action="/login/signout"><button>Signout</button></form>
+        <form method="POST" action="/trips/add-trip">
+            <input type="text" placeHolder="Enter Title" name="title" />
+            <input type="text" placeHolder="Enter Date of Departure" name="departureDate" />
+            <input type="text" placeHolder="Enter Date of Return" name="returnDate" />
+            <input type="text" placeHolder="Type Image URL" name="image" />
+            <button>Add</button>
+        </form>
+    {{#title}} 
+        {{title}} trip has been added.
+    {{/title}}
+    <p></p>
+    <a href="http://localhost:3000/trips"><button>View Trips</button></a>
+    
+    </body>
+
+</html>

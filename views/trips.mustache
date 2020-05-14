@@ -1,0 +1,30 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/trips/styles.css" />
+</head>
+<body>
+    <h2>View All Trips</h2>
+    <form method="POST" action="/login/signout"><button>Signout</button></form>
+
+    <a href="http://localhost:3000/trips/add-trip"><button>Add Trip</button></a>
+    <ul>
+         {{#listOfTrips}} <!-- Start of the loop --> 
+        
+        <img src="{{image}}" />
+        <br/>
+            <p><b>Trip: </b>{{title}}</p> 
+            <p><b>Departure Date: </b>{{departureDate}}</p>      
+            <p><b>Return Date: </b>{{returnDate}}</p>
+            <p><b>Username: </b>{{username}}</p>
+            <form method="POST" action="/trips/delete"> 
+            <input type="hidden" value="{{title}}"  name="title"/> 
+            <button>Delete</button> 
+            </form>
+    
+         {{/listOfTrips}} <!-- End of the loop -->
+    </ul>
+<footer>
+    <a href="http://localhost:3000/trips/api/trips" target="_blank"><h4>View Your Trips in JSON Format</h4></a> 
+</footer>
+</body>
+</html>
