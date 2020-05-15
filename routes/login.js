@@ -18,7 +18,9 @@ router.post("/", (req, res) => {
     }
     res.redirect("trips");
   } else {
-    res.redirect("login");
+    res.render("login", {
+      messageError: "Username and/or password is incorrect.",
+    });
   }
 });
 
